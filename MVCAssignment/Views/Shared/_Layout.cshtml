@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        .container{min-height:600px;}
+        header img {
+            float: left;
+        }
+
+        header ul {
+            display: inline-block
+        }
+
+            header ul li {
+                list-style: none;
+                padding: 15px;
+                margin: 2px;
+                display: inline-block
+            }
+
+                header ul li a {
+                    text-decoration: none;
+                    color: #ff8000
+                }
+    </style>
+
+</head>
+
+<body>
+    @Html.Partial("_Header")
+    <div class="container">
+        @RenderBody()
+    </div>
+    @Html.Partial("_Footer")
+</body>
+</html>
+

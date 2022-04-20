@@ -1,0 +1,26 @@
+﻿@model MVCAssignment.Model.Fever
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Check fever";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+
+        @if (ViewData["fever"] != null)
+        {
+            <p>@ViewData["fever"]</p>
+        }
+        <form asp-action="CheckFever" enctype="multipart/form-data" method="post">
+            
+                <label asp-for="HasFever" class="control-label"></label>
+                <input asp-for="HasFever" class="form-control" />
+
+            <div class="form-group">
+                <input type="submit" value="CheckFever" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

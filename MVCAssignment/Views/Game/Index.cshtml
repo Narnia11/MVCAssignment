@@ -1,0 +1,30 @@
+﻿@model MVCAssignment.Model.Game
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Guessing Game";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <div>
+
+        @if (ViewData["resultMessage"] != null)
+        {
+            <p>@ViewData["resultMessage"]</p>
+        }
+        @if (ViewData["counter"] != null)
+        {
+            <p>guess count: @ViewData["counter"]</p>
+        }
+        <form asp-action="GuessNumber" enctype="multipart/form-data" method="post">
+
+            <label asp-for="GussingNumber" class="control-label"></label>
+            <input asp-for="GussingNumber" class="form-control" />
+
+            <div class="form-group">
+                <input type="submit" value="Guess number" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
