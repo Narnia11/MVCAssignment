@@ -17,6 +17,8 @@
         {
             <p>guess count: @ViewData["counter"]</p>
         }
+        <a asp-controller="GAME" asp-action="ResetGame">Reset</a>
+
         <form asp-action="GuessNumber" enctype="multipart/form-data" method="post">
 
             <label asp-for="GussingNumber" class="control-label"></label>

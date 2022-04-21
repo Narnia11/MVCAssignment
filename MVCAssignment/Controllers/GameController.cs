@@ -42,18 +42,32 @@ namespace MVCAssignment.Controllers
             string resultMessage;
             if (GussingNumber == Convert.ToInt32(HttpContext.Session.GetString("RandomNumber")))
             {
-                resultMessage = "it's correct";
+                resultMessage = "It's correct!";
             }
             else if (GussingNumber > Convert.ToInt32(HttpContext.Session.GetString("RandomNumber")))
             {
-                resultMessage = "it's greater";
+                resultMessage = "It's greater than the number";
             }
             else
             {
-                resultMessage = "it's lower";
+                resultMessage = "It's lower than the number";
             }
 
             return RedirectToAction(nameof(Index), new { result = resultMessage, counter = Utility.Counter });
+
+
+        }
+
+        public ActionResult ResetGame()
+        {
+            Utility.Counter = 0;
+            if (HttpContext.Session.GetString("RandomNumber") != null)
+            {
+                HttpContext.Session.Remove("RandomNumber");
+
+            }
+
+            return RedirectToAction(nameof(Index));
 
 
         }
