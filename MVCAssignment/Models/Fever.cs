@@ -8,7 +8,7 @@ namespace MVCAssignment.Model
     public class Fever
     {
         [Key]
-        public float HasFever { get; set; }
+        public float BodyTemperature { get; set; }
 
 
     }

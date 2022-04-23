@@ -13,11 +13,11 @@ namespace MVCAssignment.Models
         public static string CheckFever(MVCAssignment.Model.Fever model)
         {
             string result;
-            if (model.HasFever > 37)
+            if (model.BodyTemperature > 37)
             {
                 result = "You have fever!";
             }
-            else if (model.HasFever < 35)
+            else if (model.BodyTemperature < 35)
             {
                 result = "You are at risk of hypotermia!";
             }

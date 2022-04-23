@@ -40,9 +40,10 @@ namespace MVCAssignment
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(name: "GuessingGame", pattern: "GuessingGame/{controller=Game}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(name: "Doctor", pattern: "{controller=Doctor}/{action=CheckFever}/{id?}");
-                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+                
 
             });
         }
